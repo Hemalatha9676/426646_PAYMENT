@@ -1,4 +1,4 @@
-package com.paymentsweb.MySpringProject.Service;
+package com.paymentswebapp.MySpringProject.Service;
 
 public class TransactionService {
 

@@ -1,5 +1,25 @@
-package com.paymentsweb.MySpringProject.Service;
+package com.paymentswebapp.MySpringProject.Service;
 
-public class UserService {
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.paymentswebapp.MySpringProject.Entities.UserEntity;
+import com.paymentswebapp.MySpringProject.Repository.UserRepository;
+
+@Service
+public class UserService 
+{
+	@Autowired
+ public  UserRepository userrepo;
+	public void saveUser(UserEntity user) 
+	{
+		userrepo.save(user);
+	}
+	public UserEntity getUserByUsernameAndPassword(String UserName, String Password) {
+	    return userrepo.findByUsernameAndPassword(UserName, Password);
+	}
 
 }
+

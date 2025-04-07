@@ -1,70 +1,84 @@
 package com.paymentswebapp.MySpringProject.dtos;
 
+import javax.swing.Spring;
+
 public class Userdtos 
 {
 
-	private int userid;
-	private String username;
-	private String password;
-	private String firstname;
-	private String lastname;
-	private long phonenumber;
-	private String email;
-	public Userdtos(int userid, String username, String password, String firstname, String lastname, long phonenumber,
-			String email) {
+	private int UserId;
+	private String UserName;
+    private String FirstName;
+	private String LastName;
+	private String Password;
+	private long PhoneNumber;
+	private String Email;
+	private String Address;
+	public Userdtos(int UserId, String UserName, String FirstName, String LastName, String Password,long PhoneNumber,
+			String Email,String Address) {
 		super();
-		this.userid = userid;
-		this.username = username;
-		this.password = password;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.phonenumber = phonenumber;
-		this.email = email;
+		this.UserId = UserId;
+		this.UserName = UserName;
+       this.FirstName = FirstName;
+		this.LastName = LastName;
+		this.Password = Password;
+		this.PhoneNumber = PhoneNumber;
+		this.Email = Email;
+		this.Address=Address;
+		
 	}
 	public int getUserid() {
-		return userid;
+		return UserId;
 	}
-	public void setUserid(int userid) {
-		this.userid = userid;
+	public void setUserid(int UserId) {
+		this.UserId = UserId;
 	}
 	public String getUsername() {
-		return username;
+		return UserName;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(String UserName) {
+		this.UserName = UserName;
+	}
+	
+	public String getFirstname() {
+		return FirstName;
+	}
+	public void setFirstname(String FirstName) {
+		this.FirstName = FirstName;
+	}
+	public String getLastName() {
+		return LastName;
+	}
+	public void setLastName(String LastName) {
+		this.LastName = LastName;
 	}
 	public String getPassword() {
-		return password;
+		return Password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String Password) {
+		this.Password = Password;
 	}
-	public String getFirstname() {
-		return firstname;
+	public long getPhoneNumber() {
+		return PhoneNumber;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setPhonenumber(long PhoneNumber) {
+	    this.PhoneNumber = PhoneNumber;
 	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	public long getPhonenumber() {
-		return phonenumber;
-	}
-	public void setPhonenumber(long phonenumber) {
-		this.phonenumber = phonenumber;
-	}
+
 	public String getEmail() {
-		return email;
+		return Email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String Email) {
+		this.Email = Email;
 	}
 	
 	
+	public String getAddress() {
+		return Address;
+	}
+
+    public void setAddress(String Address) {
+		this.Address = Address;
+	}
 	
 	
 	

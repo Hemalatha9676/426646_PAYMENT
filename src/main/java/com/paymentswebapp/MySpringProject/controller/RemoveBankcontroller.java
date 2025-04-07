@@ -1,5 +1,6 @@
 package com.paymentswebapp.MySpringProject.controller;
 
-public class RemoveBankcontroller {
+public class RemoveBankcontroller
+{
 
 }
