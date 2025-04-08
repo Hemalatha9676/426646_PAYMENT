@@ -9,5 +9,5 @@ import com.paymentswebapp.MySpringProject.Entities.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity,Integer>
 {
-    UserEntity findByUsernameAndPassword(String UserName, String Password);
+//    UserEntity findByUserNameAndPassword(String UserName, String Password);
 }

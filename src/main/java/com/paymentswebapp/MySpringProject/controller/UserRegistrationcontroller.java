@@ -30,8 +30,8 @@ public class UserRegistrationcontroller
 	   System.out.println(userdto);
        UserEntity userentity=new UserEntity();
        userentity.setUserId(userdto.getUserid());
-       userentity.setUserName(userdto.getUsername());
-       userentity.setFirstname(userdto.getFirstname());
+       userentity.setUserName(userdto.getUserName());
+       userentity.setFirstname(userdto.getFirstName());
        userentity.setLastname(userdto.getLastName());
        userentity.setPassword(userdto.getPassword());
        userentity.setPhoneNumber(userdto.getPhoneNumber());

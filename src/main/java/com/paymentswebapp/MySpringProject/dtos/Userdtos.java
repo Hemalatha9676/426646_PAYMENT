@@ -32,17 +32,17 @@ public class Userdtos
 	public void setUserid(int UserId) {
 		this.UserId = UserId;
 	}
-	public String getUsername() {
+	public String getUserName() {
 		return UserName;
 	}
-	public void setUsername(String UserName) {
+	public void setUserName(String UserName) {
 		this.UserName = UserName;
 	}
 	
-	public String getFirstname() {
+	public String getFirstName() {
 		return FirstName;
 	}
-	public void setFirstname(String FirstName) {
+	public void setFirstName(String FirstName) {
 		this.FirstName = FirstName;
 	}
 	public String getLastName() {

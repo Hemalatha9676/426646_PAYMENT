@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.paymentswebapp.MySpringProject.Entities.UserEntity;
 import com.paymentswebapp.MySpringProject.Service.UserService;
+
+import jakarta.servlet.http.HttpSession;
 @Controller
 public class UserLogincontroller
 {
@@ -23,28 +25,30 @@ public class UserLogincontroller
 		System.out.println("login page");
 		return "Loginpage" ;
 	}
-	   @PostMapping("/login")
-	    public String showdashboard(@RequestParam("UserName") String UserName,
-	                                @RequestParam("Password") String Password,
-	                                Model model) {
-
-	        try {
-	            UserEntity user = userservice.getUserByUsernameAndPassword(UserName, Password);
-
-	            if (user != null) {
-	                return "Dashboardpage"; // Login success
-	            } else {
-	                model.addAttribute("error", "Invalid username or password");
-	                return "Loginpage"; // Login failed
-	            }
-
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	            model.addAttribute("error", "Something went wrong. Please try again.");
-	            return "Loginpage";
-	        }
-   
+//	@PostMapping("/login")
+//	public String  login(@RequestParam("email") String email,
+//            @RequestParam("password") String password,
+//            HttpSession session) {
+//		UserEntity loggedInUser=userservice.authenticateUser(UserName,Password);
+//		
+//		if(loggedInUser!=null) {
+//			session.setAttribute("email", email);
+//			
+//			System.out.println("login successfull");
+//			 return "redirect:/dashboard";
+//			
+//		}else {
+//			System.out.println("login not successfull");
+//			return "login";
+//		}
+//		
+	@PostMapping("/login")
+   public String displaydashboard()
+   {
+	return "Dashboardpage";
+	   
+   }
     
 }
 
-}
+//}

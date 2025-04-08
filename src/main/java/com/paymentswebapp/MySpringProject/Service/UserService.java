@@ -17,9 +17,10 @@ public class UserService
 	{
 		userrepo.save(user);
 	}
-	public UserEntity getUserByUsernameAndPassword(String UserName, String Password) {
-	    return userrepo.findByUsernameAndPassword(UserName, Password);
-	}
+//	public UserEntity authenticateUser(String UserName ,String Password) {
+//		return userrepo.findByUserNameAndPassword(UserName, Password);
+//		
+//	}
 
 }
 
