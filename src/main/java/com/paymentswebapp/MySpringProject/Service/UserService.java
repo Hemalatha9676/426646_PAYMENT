@@ -9,18 +9,17 @@ import com.paymentswebapp.MySpringProject.Entities.UserEntity;
 import com.paymentswebapp.MySpringProject.Repository.UserRepository;
 
 @Service
-public class UserService 
-{
-	@Autowired
- public  UserRepository userrepo;
-	public void saveUser(UserEntity user) 
-	{
-		userrepo.save(user);
-	}
-//	public UserEntity authenticateUser(String UserName ,String Password) {
-//		return userrepo.findByUserNameAndPassword(UserName, Password);
-//		
-//	}
+public class UserService {
 
+    @Autowired
+    private UserRepository userRepo;
+
+    public void saveUser(UserEntity user) {
+        userRepo.save(user);
+    }
+
+    public Optional<UserEntity> authenticateUser(String userName, String password) {
+        return userRepo.findByUserNameAndPassword(userName, password);
+    }
 }
 

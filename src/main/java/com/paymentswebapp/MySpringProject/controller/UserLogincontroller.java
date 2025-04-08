@@ -1,5 +1,7 @@
 package com.paymentswebapp.MySpringProject.controller;
 
+import java.util.Optional; // ✅ Correct Optional import
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,44 +13,33 @@ import com.paymentswebapp.MySpringProject.Entities.UserEntity;
 import com.paymentswebapp.MySpringProject.Service.UserService;
 
 import jakarta.servlet.http.HttpSession;
+
 @Controller
-public class UserLogincontroller
-{
-	
+public class UserLogincontroller {
 
     @Autowired
-    private UserService userservice;
-    
-	@GetMapping("/login")
-	public String dispalyloginform()
-	{
-		System.out.println("login page");
-		return "Loginpage" ;
-	}
-//	@PostMapping("/login")
-//	public String  login(@RequestParam("email") String email,
-//            @RequestParam("password") String password,
-//            HttpSession session) {
-//		UserEntity loggedInUser=userservice.authenticateUser(UserName,Password);
-//		
-//		if(loggedInUser!=null) {
-//			session.setAttribute("email", email);
-//			
-//			System.out.println("login successfull");
-//			 return "redirect:/dashboard";
-//			
-//		}else {
-//			System.out.println("login not successfull");
-//			return "login";
-//		}
-//		
-	@PostMapping("/login")
-   public String displaydashboard()
-   {
-	return "Dashboardpage";
-	   
-   }
-    
-}
+    UserService userService;
 
-//}
+    @GetMapping("/login")
+    public String displayLoginForm() {
+        System.out.println("login page");
+        return "Loginpage";
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestParam("UserName") String UserName,
+                        @RequestParam("Password") String Password,
+                        HttpSession session,
+                        Model model) {
+
+        Optional<UserEntity> user = userService.authenticateUser(UserName, Password); 
+
+        if (user.isPresent()) {
+            session.setAttribute("UserName", UserName);
+            return "Dashboardpage";
+        } else {
+            model.addAttribute("error", "Invalid username or password");
+            return "Loginpage";
+        }
+    }
+}

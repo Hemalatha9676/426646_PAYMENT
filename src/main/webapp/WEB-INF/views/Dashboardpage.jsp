@@ -148,10 +148,14 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <div class="header">
             <h2>Payment Web App</h2>
-            <a href="logout.jsp" class="logout">Logout</a>
+          <form action="/logout">
+			<button type="submit" class="logout-btn">Logout</button>
+		</form>
+           
         </div>
 
         <% 
@@ -164,10 +168,12 @@
             <p><strong>Full Name:</strong> <%= fullName %></p>
             <p><strong>Email:</strong> <%= email %></p>
             <p><strong>Phone:</strong> <%= phone %></p>
+             <a href="Editprofilepage.jsp" >Edit</a>
+            
         </div>
 
         <% 
-            HttpSession hs = request.getSession();
+            HttpSession  hs = request.getSession();
             String uname = (String) hs.getAttribute("uname");
         %>
         <div class="balance-section">

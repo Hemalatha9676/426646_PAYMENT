@@ -10,13 +10,12 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class Logoutcontroller
 {
-	public class LogoutController {
-//		@GetMapping("/logout")
-//		public String loggingOut(HttpSession session, Model model) {
-//			session.invalidate();
-//
-//			return "redirect:/login";
-//		}
-
-	}
+	
+		@GetMapping("/logout")
+		public String loggingOut(HttpSession session, Model model) 
+		{
+			session.invalidate();
+            return "Loginpage";
+		}
 }
+

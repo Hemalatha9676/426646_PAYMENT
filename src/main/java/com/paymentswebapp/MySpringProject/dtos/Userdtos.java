@@ -6,21 +6,21 @@ public class Userdtos
 {
 
 	private int UserId;
-	private String UserName;
+	private String userName;
     private String FirstName;
 	private String LastName;
-	private String Password;
+	private String password;
 	private long PhoneNumber;
 	private String Email;
 	private String Address;
-	public Userdtos(int UserId, String UserName, String FirstName, String LastName, String Password,long PhoneNumber,
+	public Userdtos(int UserId, String userName, String FirstName, String LastName, String password,long PhoneNumber,
 			String Email,String Address) {
 		super();
 		this.UserId = UserId;
-		this.UserName = UserName;
+		this.userName = userName;
        this.FirstName = FirstName;
 		this.LastName = LastName;
-		this.Password = Password;
+		this.password = password;
 		this.PhoneNumber = PhoneNumber;
 		this.Email = Email;
 		this.Address=Address;
@@ -33,10 +33,10 @@ public class Userdtos
 		this.UserId = UserId;
 	}
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
-	public void setUserName(String UserName) {
-		this.UserName = UserName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 	public String getFirstName() {
@@ -52,10 +52,10 @@ public class Userdtos
 		this.LastName = LastName;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
-	public void setPassword(String Password) {
-		this.Password = Password;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public long getPhoneNumber() {
 		return PhoneNumber;

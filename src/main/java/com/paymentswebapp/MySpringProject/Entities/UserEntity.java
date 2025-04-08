@@ -15,14 +15,14 @@ public class UserEntity {
 	@Column(name="UserId")
 	private int UserId;
 	@Column(name="UserName")
-	private String UserName;
+	private String userName;
 	
 	@Column(name="FirstName")
 	private String FirstName;
 	@Column(name="LastName")
 	private String LastName;
 	@Column(name="Password")
-	private String Password;
+	private String password;
 	@Column(name="PhoneNumber")
 	private long PhoneNumber;
 	@Column(name="Email")
@@ -41,12 +41,12 @@ public class UserEntity {
 
 
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 
 
 	public void setUserName(String UserName) {
-		this.UserName = UserName;
+		this.userName = UserName;
 	}
 
    public String getFirstName() {
@@ -69,12 +69,12 @@ public class UserEntity {
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 
 	public void setPassword(String Password) {
-		this.Password = Password;
+		this.password = Password;
 	}
 
 	public long getPhonenumber() {
