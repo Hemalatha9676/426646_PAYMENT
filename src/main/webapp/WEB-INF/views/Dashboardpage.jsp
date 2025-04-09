@@ -157,20 +157,16 @@
 		</form>
            
         </div>
-
-        <% 
-            String fullName = (String) session.getAttribute("firstname");
-            String email = (String) session.getAttribute("email");
-            String phone = (String) session.getAttribute("phonenumber");
-        %>
-        <div class="user-info">
+    <div class="user-info">
             <h2>User Information</h2>
-            <p><strong>Full Name:</strong> <%= fullName %></p>
-            <p><strong>Email:</strong> <%= email %></p>
-            <p><strong>Phone:</strong> <%= phone %></p>
-             <a href="Editprofilepage.jsp" >Edit</a>
-            
+            <p><strong>Full Name:</strong> <%= user.getFirstname() %> <%= user.getLastname() %></p>
+            <p><strong>Email:</strong> <%= user.getEmail() %></p>
+            <p><strong>Phone:</strong> <%= user.getPhonenumber() %></p>
+            <form action="usereditprofile" method="get">
+                <button type="submit" class="send-money-btn">Edit Profile</button>
+            </form>
         </div>
+
 
         <% 
             HttpSession  hs = request.getSession();

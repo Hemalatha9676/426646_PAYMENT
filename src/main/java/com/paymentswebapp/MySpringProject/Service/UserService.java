@@ -21,5 +21,10 @@ public class UserService {
     public Optional<UserEntity> authenticateUser(String userName, String password) {
         return userRepo.findByUserNameAndPassword(userName, password);
     }
+    
+    public Optional<UserEntity> getUserByEmail(String email) {
+		return userRepo.findByEmail(email);
+	}
+
 }
 

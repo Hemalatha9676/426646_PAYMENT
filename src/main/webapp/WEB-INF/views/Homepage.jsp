@@ -65,14 +65,14 @@
 
     <!-- Navbar -->
     <div class="navbar">
-        Payment | <a href="loginpage.jsp">Login</a> | <a href="Registrationpage.jsp">Register</a>
+        Payment | <a href="/login">Login</a> | <a href="/register">Register</a>
     </div>
 
     <!-- Hero Section -->
     <div class="hero">
         <h2>Welcome to Payment</h2>
         <p>Secure & Fast Digital Payments</p>
-        <a href="Registrationpage.jsp" class="btn">Get Started</a>
+        <a href="/register" class="btn">Get Started</a>
     </div>
 
 </body>

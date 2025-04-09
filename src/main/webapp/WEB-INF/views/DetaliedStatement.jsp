@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Bank Account</title>
+    <title>Statement Request Page</title>
     
     <style>
         /* General Styles */
@@ -20,7 +20,7 @@
         .header {
             font-size: 24px;
             font-weight: bold;
-            color: red;
+            color: orange;
             margin: 20px auto;
             padding: 10px;
             border: 2px solid red;
@@ -48,7 +48,7 @@
             display: inline-block;
             width: 200px;
             font-weight: bold;
-            color: blue;
+            color: orange;
             text-align: right;
             padding-right: 10px;
         }
@@ -61,56 +61,76 @@
             font-size: 14px;
         }
 
+        /* Checkbox Styles */
+        .checkbox-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+
+        .checkbox-group label {
+            color: orange;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
         /* Submit Button */
         .submit-btn {
-            background-color: blue;
+            background-color: red;
             color: white;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
             display: block;
-            width: 100%;
+            margin: auto;
         }
 
         .submit-btn:hover {
-            background-color: darkblue;
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">Add Bank Account</div>
+    <div class="header">Statement Request Page</div>
 
     <div class="container">
-        <form action="Addbankaccount" method="post">
+        <form action="generateStatement.jsp" method="post">
             <div class="form-group">
-                <label for="bankName">BANK NAME:</label>
-                <input type="text" id="bankName" name="BankName" required>
+                <label for="startDate">Start DATE:</label>
+                <input type="date" id="startDate" name="startDate" required>
             </div>
             <div class="form-group">
-                <label for="accountNumber">ACCOUNT NUMBER:</label>
-                <input type="text" id="accountNumber" name="AccountNumber" required>
+                <label for="endDate">END DATE:</label>
+                <input type="date" id="endDate" name="endDate" required>
             </div>
-            <div class="form-group">
-                <label for="accountType">ACCOUNT TYPE:</label>
-                <input type="text" id="accountType" name="Accounttype" required>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="all" name="transactionType" value="all">
+                <label for="all">ALL</label>
+
+                <input type="checkbox" id="credit" name="transactionType" value="credit">
+                <label for="credit">Credit Txns</label>
+
+                <input type="checkbox" id="debit" name="transactionType" value="debit">
+                <label for="debit">Debit Txns</label>
+
+                <input type="checkbox" id="wallet" name="transactionType" value="wallet">
+                <label for="wallet">Wallet Txns</label>
+
+                <input type="checkbox" id="bank" name="transactionType" value="bank">
+                <label for="bank">Bank Txns</label>
             </div>
+
             <div class="form-group">
-                <label for="ifscCode">IFSC CODE:</label>
-                <input type="text" id="ifscCode" name="IFSCCODE" required>
-            </div>
-            <div class="form-group">
-                <label for="currentBalance">CURRENT BALANCE:</label>
-                <input type="number" id="currentBalance" name="Currentbalance" required>
-            </div>
-            <div class="form-group">
-                <label for="pin">PIN:</label>
-                <input type="password" id="pin" name="Pin" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="submit-btn">Add Account</button>
+                <button type="submit" class="submit-btn">GENERATE</button>
             </div>
         </form>
     </div>

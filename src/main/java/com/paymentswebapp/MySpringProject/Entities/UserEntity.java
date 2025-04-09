@@ -26,7 +26,7 @@ public class UserEntity {
 	@Column(name="PhoneNumber")
 	private long PhoneNumber;
 	@Column(name="Email")
-	private String Email;
+	private String email;
 	@Column(name="Address")
 	private String Address;
 	
@@ -88,12 +88,12 @@ public class UserEntity {
 
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 
-	public void setEmail(String Email) {
-		this.Email = Email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	public String getAddress() {

@@ -9,5 +9,12 @@ import com.paymentswebapp.MySpringProject.Entities.UserEntity;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
-    Optional<UserEntity> findByUserNameAndPassword(String userName, String password);
+  Optional<UserEntity> findByUserNameAndPassword(String userName, String password);
+    
+    Optional<UserEntity> findByEmail(String email);
+    	
+    
+    
+    Optional<UserEntity>findByEmailAndPassword(String email,String password);
+    
 }
