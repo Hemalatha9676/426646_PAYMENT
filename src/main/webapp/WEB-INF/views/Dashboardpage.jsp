@@ -158,14 +158,19 @@
            
         </div>
     <div class="user-info">
-            <h2>User Information</h2>
-            <p><strong>Full Name:</strong> <%= user.getFirstname() %> <%= user.getLastname() %></p>
-            <p><strong>Email:</strong> <%= user.getEmail() %></p>
-            <p><strong>Phone:</strong> <%= user.getPhonenumber() %></p>
-            <form action="usereditprofile" method="get">
-                <button type="submit" class="send-money-btn">Edit Profile</button>
-            </form>
-        </div>
+            
+    <div class="user-info">
+    <h2>User Information</h2>
+    <p><strong>Full Name:</strong> ${user.userName}</p>
+<p><strong>Email:</strong> ${user.email}</p>
+<p><strong>Phone:</strong> ${user.phonenumber}</p>
+<p><strong>Address:</strong> ${user.address}</p>
+    
+    <form action="usereditprofile" method="get">
+        <button type="submit" class="send-money-btn">Edit Profile</button>
+    </form>
+</div>
+
 
 
         <% 
@@ -195,7 +200,7 @@
             </div>
 
             <div class="bank-card">
-                <a href="AddbankAccount.jsp" class="addbankaccount">[+] Add New Bank Account</a>
+                <a href="AddbankAccount" class="addbankaccount">[+] Add New Bank Account</a>
             </div>
         </div>
 

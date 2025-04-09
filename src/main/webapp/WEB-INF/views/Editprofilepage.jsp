@@ -39,7 +39,7 @@ button {
 	<div class="form-container">
 		<h2>Edit Profile</h2>
 
-		<form action="/usereditprofile" method="post">
+		<form action="usereditprofile" method="post">
 		<%--
 		 	<label>User Id:</label> <input type="text" name="userid"
 				value="${user.userid }" required /> --%>
@@ -49,9 +49,9 @@ button {
 			   <label>Last Name:</label> <input type="text" name="LastName"
 				value="${user.lastname}" required />
 				 <label>User Name:</label> 
-				 <input type="text" name="UserName" value="${user.username}" required /> 
+				 <input type="text" name="UserName" value="${user.userName}" required /> 
 				 <label>Email:</label>
-			     <input type="email" name="email" value="${user.email}" readonly />
+			     <input type="email" name="email" value="${user.email}" required>
 			     <label>PhoneNumber:</label> <input type="text" name="PhoneNumber"
 				value="${user.phonenumber}" required /> 
 				<label>Address:</label>

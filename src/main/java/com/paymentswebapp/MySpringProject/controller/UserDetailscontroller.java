@@ -20,17 +20,13 @@ public class UserDetailscontroller
 	UserService userservice;
 
 	@GetMapping("/usereditprofile")
-	public String showEditProfilePage(HttpSession session, Model model) {
-		String email = (String) session.getAttribute("email");
-		Optional<UserEntity> optionaluser = userservice.getUserByEmail(email);
-		System.out.println(optionaluser);
-		if (optionaluser.isPresent()) {
-			UserEntity user = optionaluser.get();
-			model.addAttribute("user", user);
-			return "Editprofilepage";
-		}
-		return "Loginpage";
+	public String editshowform()
+	{
+		
+	   return "Editprofilepage";
 	}
+	
+
 
 	@PostMapping("/usereditprofile")
 	public String updateProfile(UserEntity updatedData, HttpSession session) {
@@ -42,6 +38,7 @@ public class UserDetailscontroller
             existingUser.setFirstname(updatedData.getFirstName());
             existingUser.setLastname(updatedData.getLastName());
             existingUser.setPhoneNumber(updatedData.getPhonenumber());
+            existingUser.setEmail(updatedData.getEmail());
             existingUser.setAddress(updatedData.getAddress());
             existingUser.setUserName(updatedData.getUserName());
             existingUser.setPassword(updatedData.getPassword());

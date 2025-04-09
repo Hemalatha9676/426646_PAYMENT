@@ -130,7 +130,7 @@
       <input type="submit" value="Create Account">
     </form>
     <div class="login-link">
-      Already have an account? <a href="Loginpage.jsp">Login here</a>
+      Already have an account? <a href="/login">Login here</a>
     </div>
   </div>
 </body>

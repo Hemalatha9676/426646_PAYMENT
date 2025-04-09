@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,9 +19,23 @@ import jakarta.servlet.http.HttpSession;
 public class UserLogincontroller{
 	
 
+	@GetMapping("/login")
+	public String showform()
+	{
+		
+	   return "Loginpage" ;
+	}
+	
+	
+	
+	
+	
 	@Autowired
 	UserService userservice;
-@PostMapping("/login")
+
+	
+	
+	@PostMapping("/login")
 public String login(@RequestParam("UserName") String UserName,
                     @RequestParam("Password") String Password,
                     HttpSession session,
@@ -29,13 +44,13 @@ public String login(@RequestParam("UserName") String UserName,
     Optional<UserEntity> user = userservice.authenticateUser(UserName, Password); 
 
     if (user.isPresent()) {
-        UserEntity u = user.get();
-        session.setAttribute("user", u); 
-        session.setAttribute("firstname", u.getFirstName());
-        session.setAttribute("email", u.getEmail());
-        session.setAttribute("phonenumber", u.getPhonenumber());
-        session.setAttribute("uname", u.getUserName());
-        return "redirect:/dashboard"; // Redirect to avoid resubmit
+        UserEntity us= user.get();
+        session.setAttribute("user", us); 
+        session.setAttribute("firstname", us.getFirstName());
+        session.setAttribute("email", us.getEmail());
+        session.setAttribute("phonenumber", us.getPhonenumber());
+        session.setAttribute("uname", us.getUserName());
+        return "Dashboardpage"; 
     } else {
         model.addAttribute("error", "Invalid username or password");
         return "Loginpage";
