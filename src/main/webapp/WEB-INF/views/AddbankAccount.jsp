@@ -84,26 +84,44 @@
     <div class="header">Add Bank Account</div>
 
     <div class="container">
-        <form action="Addbankaccount" method="post">
-            <div class="form-group">
-                <label for="bankName">BANK NAME:</label>
-                <input type="text" id="bankName" name="BankName" required>
+        <form action="addnewbankaccount" method="post">
+           <div class="form-group">
+    <label for="bankName">BANK NAME:</label>
+    <input type="text" id="bankName" name="BankName" required>
+</div>
+<div class="form-group">
+    <label for="bankAccountId">BANK ACCOUNT ID:</label>
+    <input type="text" id="bankAccountId" name="BankAccountId" required>
+</div>
+
+             <div class="form-group">
+                <label for="BankAccountNumber">ACCOUNT NUMBER:</label>
+                <input type="text" id="BankAccountNumber" name="BankAccountNo" required>
             </div>
-            <div class="form-group">
-                <label for="accountNumber">ACCOUNT NUMBER:</label>
-                <input type="text" id="accountNumber" name="AccountNumber" required>
+          
+           
+             <div class="form-group">
+                <label for="ifscCode">IFSC CODE:</label>
+                <input type="text" id="ifscCode" name="IFSCCode" required>
+            </div>
+            
+            
+              <div class="form-group">
+                <label for="bankbranch">Bank Branch</label>
+                <input type="text" id="bankbranch" name="BankBranch" required>
             </div>
             <div class="form-group">
                 <label for="accountType">ACCOUNT TYPE:</label>
-                <input type="text" id="accountType" name="Accounttype" required>
+                <input type="text" id="accountType" name="AccountType" required>
             </div>
-            <div class="form-group">
-                <label for="ifscCode">IFSC CODE:</label>
-                <input type="text" id="ifscCode" name="IFSCCODE" required>
-            </div>
+            <div>
+             <div class="form-group">
+            <label>Account Type Active Or not :</label>
+                <input type="text" name="isActive" required>
+          </div>
             <div class="form-group">
                 <label for="currentBalance">CURRENT BALANCE:</label>
-                <input type="number" id="currentBalance" name="Currentbalance" required>
+                <input type="number" id="currentBalance" name="CurrentBalance" required>
             </div>
             <div class="form-group">
                 <label for="pin">PIN:</label>

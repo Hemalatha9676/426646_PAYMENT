@@ -200,8 +200,11 @@
             </div>
 
             <div class="bank-card">
-                <a href="AddbankAccount" class="addbankaccount">[+] Add New Bank Account</a>
-            </div>
+                <form action ="/addnewbankaccount" method="get">
+                <button class="plus-button">+ Add Bank Account</button>
+                
+</form>
+</div>
         </div>
 
         <div class="transactions">

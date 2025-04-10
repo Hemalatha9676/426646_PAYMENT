@@ -13,7 +13,7 @@ public class UserEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="UserId")
-	private int UserId;
+	private int userId;
 	@Column(name="UserName")
 	private String userName;
 	
@@ -31,12 +31,12 @@ public class UserEntity {
 	private String Address;
 	
 	public int getUserId() {
-		return UserId;
+		return userId;
 	}
 
 
 	public void setUserId(int userId) {
-		this.UserId = UserId;
+		this.userId = userId;
 	}
 
 
